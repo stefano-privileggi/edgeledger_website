@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --primary-color : #93CB52; 
+    --primary-color: #93CB52;
+    --white-color: #FFF;
 }
 
 * {
@@ -18,18 +19,55 @@ p {
     margin: 0.75rem 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* Utility clases */
+
 .text-primary {
-  color: var(--primary-color); 
+    color: var(--primary-color);
+}
+
+.l-heading {
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+
+.button--primary {
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+.button--dark {
+    color: var(--white-color);
+    background: #333;
+}
+
+.button--primary:hover {
+    background: #7AB436;
 }
 
 /* Navbar */
+
 #navbar {
     display: flex;
     position: sticky;
-    top: 0 ;
+    top: 0;
     background: #333;
-    color: #fff;
+    color: var(--white-color);
     justify-content: space-between;
     z-index: 1;
     padding: 1rem;
@@ -37,17 +75,17 @@ p {
 
 .navbar__list {
     display: flex;
-    align-items: center; 
-    /* // pone el logo y los elementos en la misma linea */
+    align-items: center;
+    /* // pone el logo y los elementos del navbar en la misma linea */
 }
 
 .navbar__item {
     list-style: none;
 }
 
-.navbar__item-link {
+.navbar__item--link {
     text-decoration: none;
-    color: #fff;
+    color: var(--white-color);
     padding: 0.75rem;
     margin: 0 0.25rem
 }
@@ -57,3 +95,28 @@ p {
     border-radius: 5px;
 }
 
+/* Showcase */
+
+.showcase {
+    background: #333 url('../img/showcase.jpg') no-repeat center center/cover;
+    height: 100vh;
+    color: var(--white-color);
+}
+
+.showcase__content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 2rem;
+
+    /* Overlay */
+    position:absolute;
+    top:65px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
